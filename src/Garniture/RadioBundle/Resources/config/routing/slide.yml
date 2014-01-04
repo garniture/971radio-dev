@@ -28,3 +28,5 @@ slide_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "GarnitureRadioBundle:Slide:delete" }
     requirements: { _method: post|delete }
+    
+    
