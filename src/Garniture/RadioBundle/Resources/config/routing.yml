@@ -1,0 +1,19 @@
+garniture_radio_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: GarnitureRadioBundle:Default:index }
+    
+radio_homepage:
+    pattern:  /
+    defaults: { _controller: GarnitureRadioBundle:Main:index }
+
+GarnitureRadioBundle_categorie:
+        resource: "@GarnitureRadioBundle/Resources/config/routing/categorie.yml"
+        prefix:   /categorie
+        
+GarnitureRadioBundle_slide:
+    resource: "@GarnitureRadioBundle/Resources/config/routing/slide.yml"
+    prefix:   /slide
+    
+GarnitureRadioBundle_image:
+    resource: "@GarnitureRadioBundle/Resources/config/routing/image.yml"
+    prefix:   /image

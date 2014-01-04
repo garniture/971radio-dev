@@ -1,0 +1,36 @@
+{% extends "GarnitureRadioBundle::template.html.twig" %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="container">
+        <div class="admin">
+            <article class="span4"> 
+                <h3>Slides</h3>
+                <p><a href="{{ path('slide') }}"> Voir les slides</a></p>
+                <p><a href="{{ path('slide_new') }}"> Ajouter une slide</a></p>
+                
+            </article>
+                
+            <article class="span4"> 
+                <h3>Images</h3>
+                <p><a href="{{ path('image') }}"> Voir les Images</a></p>
+                <p><a href="{{ path('image_new') }}"> Ajouter une Images</a></p>
+                
+            </article>
+        </div>
+        <div class="row">
+            {% include 'GarnitureRadioBundle:Main:wrapper-top.html.twig' %}
+        </div>
+        <div class="row">
+            {% include 'GarnitureRadioBundle:Main:slidder.html.twig' %}
+        </div>
+        
+        
+        
+    </div>
+{% endblock body %}
+

@@ -1,0 +1,54 @@
+<?php
+namespace Garniture\RadioBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Table(name="uploaded_image")
+ * @ORM\Entity(repositoryClass="Garniture\RadioBundle\Entity\ImageRepository")
+ * @ORM\HasLifecycleCallbacks
+ */
+class Image
+{
+  /**
+   * @ORM\Column(name="id", type="integer")
+   * @ORM\Id
+   * @ORM\GeneratedValue(strategy="AUTO")
+   */
+  private $id;
+
+  /**
+   * @ORM\Column(name="path", type="string", length=255)
+   */
+  private $path;
+
+  /**
+   * @ORM\Column(name="alt", type="string", length=255)
+   */
+  private $alt;
+
+   /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
+    public $name;
+
+    
+
+    public function getAbsolutePath(){
+        return null === $this->path ? null : $this->getUploadRootDir().'/'.$this->path;
+    }
+
+    public function getWebPath() {
+        return null === $this->path ? null : $this->getUploadDir().'/'.$this->path;
+    }
+
+    protected function getUploadRootDir(){        
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir(){        
+        return 'uploads/documents';
+    }
+}

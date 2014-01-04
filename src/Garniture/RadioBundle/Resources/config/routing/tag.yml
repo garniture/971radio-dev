@@ -1,0 +1,32 @@
+tag:
+    pattern:  /
+    defaults: { _controller: "GarnitureRadioBundle:Tag:index" }
+
+        
+tag_show:
+    pattern:  /{slug}/show
+    defaults: { _controller: "GarnitureRadioBundle:Tag:show" }
+    
+
+tag_new:
+    pattern:  /new
+    defaults: { _controller: "GarnitureRadioBundle:Tag:new" }
+
+tag_create:
+    pattern:  /create
+    defaults: { _controller: "GarnitureRadioBundle:Tag:create" }
+    requirements: { _method: post }
+
+tag_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GarnitureRadioBundle:Tag:edit" }
+
+tag_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GarnitureRadioBundle:Tag:update" }
+    requirements: { _method: post|put }
+
+tag_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GarnitureRadioBundle:Tag:delete" }
+    requirements: { _method: post|delete }

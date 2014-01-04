@@ -1,0 +1,30 @@
+slide:
+    pattern:  /
+    defaults: { _controller: "GarnitureRadioBundle:Slide:index" }
+
+slide_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "GarnitureRadioBundle:Slide:show" }
+
+slide_new:
+    pattern:  /new
+    defaults: { _controller: "GarnitureRadioBundle:Slide:new" }
+
+slide_create:
+    pattern:  /create
+    defaults: { _controller: "GarnitureRadioBundle:Slide:create" }
+    requirements: { _method: post }
+
+slide_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "GarnitureRadioBundle:Slide:edit" }
+
+slide_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "GarnitureRadioBundle:Slide:update" }
+    requirements: { _method: post|put }
+
+slide_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "GarnitureRadioBundle:Slide:delete" }
+    requirements: { _method: post|delete }
